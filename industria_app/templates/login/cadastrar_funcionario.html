@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'cadastro_func/cadastro_func.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastro de Funcionário</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="func_nome">Nome:</label>
+            <input type="text" id="nome" name="func_nome" required>
+            <label for="func_sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="func_sobrenome" required>
+            <label for="func_end">Endereço:</label>
+            <input type="text" id="endereco" name="func_end" required>
+            <label for="func_tel">Telefone:</label>
+            <input type="tel" id="telefone" name="func_tel" required>
+            <label for="func_salario">Salário:</label>
+            <input type="number" id="salario" name="func_salario" required>
+            <label for="departamento">Departamento:</label>
+            <input type="text" id="departamento" name="departamento" required>
+            <input type="submit" value="Salvar">
+        </form>
+    </div>
+</body>
+
+</html>

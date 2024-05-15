@@ -20,5 +20,6 @@ from industria_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.login, name='login')
+    path('', views.login, name='login'),
+    path('cadastrar_funcionario/', views.cadastrar_funcionario, name='cadastrar_funcionario'),
 ]
