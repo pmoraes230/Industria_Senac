@@ -2,30 +2,40 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Cadastro de Funcionário</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evシンQhOLaIl1NxYLCSQNzTWUWBYejg+LNwW/dTbOnPXzSYNoklPXzFBKgONgD" crossorigin="anonymous">
 </head>
+
 <body>
-<div class="container">
-    <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
-    <form method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="usuario">Usuário:</label>
-            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <img src="{% static 'login/img/logo.jpg' %}" alt="Logo" class="img-fluid mb-3">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label for="usuario" class="form-label">Usuário:</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="senha" class="form-label">Senha:</label>
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="{% url 'cadastrar_funcionario' %}" class="btn btn-primary">Cadastrar novo funcionário</a>
+
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
-        </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-    </form>
-    <div class="text-center">
-        <a href="{% url 'cadastrar_funcionario' %}" class="btn btn-link">Cadastrar novo funcionário</a>
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-V2mIkS+Cmo4rMC/8P/49tb6z5XXO/ijGBSOfHJo8l8xqDq4bFP2HC5s1R+jXT0O6" crossorigin="anonymous"></script>
 </body>
+
 </html>
